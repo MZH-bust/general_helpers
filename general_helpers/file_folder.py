@@ -37,7 +37,7 @@ def sorted_alphanumeric(data):
     return sorted(data, key=alphanum_key)
 
 
-def get_list_of_pptx_files_from_folder(filename, folder=None):
+def get_list_of_pptx_files_from_folder(folder=None):
     """
     Liest alle PPTX/pptx Dateien von einem Ordner ein.
     :param folderpath: Pfad zum Ordner
