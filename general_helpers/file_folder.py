@@ -35,3 +35,24 @@ def sorted_alphanumeric(data):
     convert = lambda text: int(text) if text.isdigit() else text.lower()
     alphanum_key = lambda key: [convert(c) for c in re.split('([0-9]+)', key)]
     return sorted(data, key=alphanum_key)
+
+
+def get_list_of_pptx_files_from_folder(filename, folder=None):
+    """
+    Liest alle PPTX/pptx Dateien von einem Ordner ein.
+    :param folderpath: Pfad zum Ordner
+    :return: Liste der Dateien mit folgenden Informationen als Dict: Dateiname, MA Kürzel, Änderungsdatum,
+            Datumsdifferenz seit Änderungsdatum
+    """
+    folder = folder or os.getcwd()
+    try:
+        ls_filenames = [{"filename": filename,
+                         "ModificationDate": get_file_modification_datetime(filename, folder),
+                         }
+                        for filename in os.listdir(folder)
+                        if (os.path.isfile(f'{folder}\\{filename}') and filename.lower().endswith(".pptx"))]
+    except (IOError, OSError) as e:
+        print(e)
+        return e
+
+    return ls_filenames
