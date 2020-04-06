@@ -2,7 +2,7 @@ import pytest
 from general_helpers import datatypes
 
 
-class TestTypeCheckerFunctions:
+class TestIsListOfStrings:
     @pytest.mark.parametrize(
         "test_parameter,expected",
         [
