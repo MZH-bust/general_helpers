@@ -1,5 +1,5 @@
 import pytest
-from general_helpers import sharepoint_helper
+from genutil import sharepoint_helper
 
 
 class TestSpFieldText:

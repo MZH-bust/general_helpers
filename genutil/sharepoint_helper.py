@@ -1,10 +1,15 @@
+"""Dieses Modul stellt Hilfsfunktionen zur Arbeit mit Daten aus Sharepoint zur Verfügung"""
+
 import re
 
 
 class SpFieldText:
     """
-    Möglichkeiten zur Verarbeitung von Informationen in Sharepoint Feldern.
+    Die Klasse stellt Möglichkeiten zur Verarbeitung von Informationen in Sharepoint Feldern bereit.
     z.B. Entfernen der Identifier aus dem Text oder Extraktion einer Liste der Identifier oder Werte aus einem Feld.
+    Hintergrund: Werden Sharepointfelder als String aus Sharepoint ausgelesen, enthalten diese neben dem Wert des
+    Felds häufig auch zusätzlich einen Identifier. Dies kann bei der weiteren Datenverarbeitung hilfreich oder störend
+    sein.
 
     Attributes
     ----------

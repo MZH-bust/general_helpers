@@ -1,3 +1,7 @@
+"""Dieses Modul stellt Hilfsfunktionen im Bezug auf Datentypen zur Verfügung.
+z.B.: Überprüfung von Datentypen"""
+
+
 def is_list_of_strings(obj: any) -> bool:
     """Gibt zurück, ob es sich bei einer übergebenen Variable um eine Liste von Strings handelt.
 

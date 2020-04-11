@@ -1,5 +1,5 @@
 import pytest
-from general_helpers import lists_dicts
+from genutil import lists_dicts
 
 
 class TestSortAlphanumeric:

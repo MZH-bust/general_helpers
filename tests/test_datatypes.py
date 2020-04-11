@@ -1,5 +1,5 @@
 import pytest
-from general_helpers import datatypes
+from genutil import datatypes
 
 
 class TestIsListOfStrings:

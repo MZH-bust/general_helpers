@@ -1,5 +1,7 @@
+"""Dieses Modul stellt grundlegende Funktionen zur Arbeit mit Listen und Dictionaries zur Verfügung. """
+
 import re
-from general_helpers import datatypes
+from genutil import datatypes
 
 
 def sort_alphanumeric(list_of_strings: list) -> list:

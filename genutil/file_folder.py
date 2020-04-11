@@ -27,7 +27,7 @@ def get_file_modification_datetime(filename: Union[str, Path], folderpath: Union
     >>> get_file_modification_datetime("README.md")
         datetime.datetime(2020, 3, 29, 16, 37, 17, 404701)
 
-    >>> get_file_modification_datetime("README.md", r"C:\\Users\\Martin.Zoeltsch\\Desktop\\Coding\\general_helpers")
+    >>> get_file_modification_datetime("README.md", r"C:\\Users\\Martin.Zoeltsch\\Desktop\\Coding\\genutil")
         datetime.datetime(2020, 3, 29, 16, 37, 17, 404701)
 
     Parameters
@@ -64,7 +64,7 @@ def list_files_in_folder(folderpath: Union[str, Path] = None, file_extension: Un
     Examples
     --------
     >>> list_files_in_folder(file_extension=".py")
-    >>> list_files_in_folder(r"C:\\Users\\Martin.Zoeltsch\\Desktop\\Coding\\general_helpers\\data", (".pptx", ".xlsx")
+    >>> list_files_in_folder(r"C:\\Users\\Martin.Zoeltsch\\Desktop\\Coding\\genutil\\data", (".pptx", ".xlsx")
 
     Parameters
     ----------
