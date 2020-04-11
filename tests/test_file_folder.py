@@ -10,10 +10,10 @@ class TestGetFileModificationDatetime:
     @pytest.mark.parametrize(
         "test_parameter,test_cases,expected",
         [
-            pytest.param(("file_folder.py", ), {"type": datetime}, True, id="Param1"),
+            pytest.param(("test_file_folder.py", ), {"type": datetime}, True, id="Param1"),
             pytest.param((Path.cwd().parent.joinpath("data/Excelfile1.xlsx"), ), {"type": datetime}, True,
                          id="Param2"),
-            pytest.param(("Excelfile1.xlsx", r"C:\Users\Martin.Zoeltsch\Desktop\Coding\general_helpers\data"),
+            pytest.param(("Excelfile1.xlsx", Path.cwd().parent.joinpath("data/")),
                          {"type": datetime}, True, id="Param3"),
             pytest.param(("FILE_DOES_NOT_EXIST.md",), {"error": (FileNotFoundError, )}, True, id="Param4"),
         ],

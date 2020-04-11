@@ -28,5 +28,8 @@ setup(
             "genutil=genutil.__main__:main",
         ]
     },
-    install_requires=[]
+    install_requires=[],
+    extras_require={
+        "testing": ["pytest", "pytest-cov", "PyHamcrest"]
+    }
 )
