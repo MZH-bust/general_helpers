@@ -1,0 +1,350 @@
+
+
+<!doctype html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>genutil package &#8212; genutil 0.0.4 Dokumentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="prev" title="genutil" href="modules.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python-Modulindex"
+             >Module</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="genutil"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">genutil 0.0.4 Dokumentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">genutil</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Inhaltsverzeichnis</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">genutil package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-genutil.datatypes">genutil.datatypes module</a></li>
+<li><a class="reference internal" href="#module-genutil.date_time">genutil.date_time module</a></li>
+<li><a class="reference internal" href="#module-genutil.file_folder">genutil.file_folder module</a></li>
+<li><a class="reference internal" href="#module-genutil.lists_dicts">genutil.lists_dicts module</a></li>
+<li><a class="reference internal" href="#module-genutil.sharepoint_helper">genutil.sharepoint_helper module</a></li>
+<li><a class="reference internal" href="#module-genutil">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="modules.html"
+                        title="vorheriges Kapitel">genutil</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/genutil.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="genutil-package">
+<h1>genutil package<a class="headerlink" href="#genutil-package" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link zu dieser Überschrift">¶</a></h2>
+</div>
+<div class="section" id="module-genutil.datatypes">
+<span id="genutil-datatypes-module"></span><h2>genutil.datatypes module<a class="headerlink" href="#module-genutil.datatypes" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Dieses Modul stellt Hilfsfunktionen im Bezug auf Datentypen zur Verfügung.
+z.B.: Überprüfung von Datentypen</p>
+<dl class="py function">
+<dt id="genutil.datatypes.is_list_of_strings">
+<code class="sig-prename descclassname">genutil.datatypes.</code><code class="sig-name descname">is_list_of_strings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">any</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#genutil.datatypes.is_list_of_strings" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Gibt zurück, ob es sich bei einer übergebenen Variable um eine Liste von Strings handelt.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_list_of_strings</span><span class="p">([</span><span class="s2">&quot;String1&quot;</span><span class="p">,</span> <span class="s2">&quot;String2&quot;</span><span class="p">,</span> <span class="s2">&quot;String3&quot;</span><span class="p">])</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_list_of_strings</span><span class="p">(</span><span class="s2">&quot;String_only&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_list_of_strings</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;not_only_string&quot;</span><span class="p">,</span> <span class="s2">&quot;String2&quot;</span><span class="p">,</span> <span class="s2">&quot;String3&quot;</span><span class="p">])</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Ein einzelner String ist keine Liste von Strings.
+Entsprechend lautet der Rückgabewert hier ebenfalls False</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameter</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>any</em>) – Beliebiger Datentyp zur Überprüfung</p>
+</dd>
+<dt class="field-even">Rückgabe</dt>
+<dd class="field-even"><p>True, falls es sich um eine Liste von Strings handelt, andernfalls False</p>
+</dd>
+<dt class="field-odd">Rückgabetyp</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-genutil.date_time">
+<span id="genutil-date-time-module"></span><h2>genutil.date_time module<a class="headerlink" href="#module-genutil.date_time" title="Link zu dieser Überschrift">¶</a></h2>
+</div>
+<div class="section" id="module-genutil.file_folder">
+<span id="genutil-file-folder-module"></span><h2>genutil.file_folder module<a class="headerlink" href="#module-genutil.file_folder" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Dieses Modul stellt grundlegende Funktionen zum Arbeiten mit Dateien und Ordnern bereit</p>
+<dl class="py function">
+<dt id="genutil.file_folder.get_file_modification_datetime">
+<code class="sig-prename descclassname">genutil.file_folder.</code><code class="sig-name descname">get_file_modification_datetime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>pathlib.Path<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">folderpath</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>pathlib.Path<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; datetime.datetime<a class="headerlink" href="#genutil.file_folder.get_file_modification_datetime" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Ermittelt den letzten Änderungszeitpunkt einer Datei</p>
+<p class="rubric">Notes</p>
+<p><strong>Zusammensetzung des zu verwendenden Dateipfads:</strong></p>
+<p>Wird ein gesamter Dateipfad als filename übergeben und kein Ordnerpfad, wird dieser Dateipfad verwendet.</p>
+<p>Wird nur ein Dateiname übergeben und ebenfalls kein Ordnerpfad, wird das aktuelle Arbeitsverzeichnis verwendet.</p>
+<p>Wird zusätzlich ein Ordnerpfad übergeben, wird der Dateipfad aus dem Ordnerpfad und dem Dateinamen zusammengesetzt</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_file_modification_datetime</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Martin.Zoeltsch\Desktop\BPMN2_0_Poster_DE.pdf&quot;</span><span class="p">)</span>
+<span class="go">    datetime.datetime(2019, 11, 20, 17, 7, 3, 177816)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_file_modification_datetime</span><span class="p">(</span><span class="s2">&quot;README.md&quot;</span><span class="p">)</span>
+<span class="go">    datetime.datetime(2020, 3, 29, 16, 37, 17, 404701)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_file_modification_datetime</span><span class="p">(</span><span class="s2">&quot;README.md&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\Martin.Zoeltsch\Desktop\Coding\genutil&quot;</span><span class="p">)</span>
+<span class="go">    datetime.datetime(2020, 3, 29, 16, 37, 17, 404701)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameter</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – Dateiname oder gesamter Pfad der Datei, deren Änderungszeitpunkt bestimmt werden soll.</p></li>
+<li><p><strong>folderpath</strong> – Ordnerpfad zu dem Ordner, in dem die Datei, deren Änderungszeitpunkt bestimmt werden soll liegt.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Rückgabe</dt>
+<dd class="field-even"><p>Zeitpunkt der letzten Änderung der Datei</p>
+</dd>
+<dt class="field-odd">Rückgabetyp</dt>
+<dd class="field-odd"><p>datetime.datetime</p>
+</dd>
+<dt class="field-even">Verursacht</dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – Falls die zu verarbeitende Datei nicht existiert.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="genutil.file_folder.list_files_in_folder">
+<code class="sig-prename descclassname">genutil.file_folder.</code><code class="sig-name descname">list_files_in_folder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">folderpath</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>pathlib.Path<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">file_extension</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>tuple<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">''</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#genutil.file_folder.list_files_in_folder" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Listet alle Dateien eines Ordners auf. Dabei kann eine Filterung nach Dateiendungen optional erfolgen.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_files_in_folder</span><span class="p">(</span><span class="n">file_extension</span><span class="o">=</span><span class="s2">&quot;.py&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list_files_in_folder</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Martin.Zoeltsch\Desktop\Coding\genutil\data&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;.pptx&quot;</span><span class="p">,</span> <span class="s2">&quot;.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameter</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>folderpath</strong> – Der Pfad, dessen Dateien aufgelistet werden sollen. Wird kein Pfad übergeben, wird das aktuelle
+Arbeitsverzeichnis verwendet.</p></li>
+<li><p><strong>file_extension</strong> – String oder Tupel von Strings mit der/den Dateiendung(en), auf die gefiltert werden soll.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Rückgabe</dt>
+<dd class="field-even"><p>Liste der passenden Dateinamen im Ordner.</p>
+</dd>
+<dt class="field-odd">Rückgabetyp</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Verursacht</dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – Falls der Ordnerpfad nicht existiert oder der Zugriff nicht möglich ist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-genutil.lists_dicts">
+<span id="genutil-lists-dicts-module"></span><h2>genutil.lists_dicts module<a class="headerlink" href="#module-genutil.lists_dicts" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Dieses Modul stellt grundlegende Funktionen zur Arbeit mit Listen und Dictionaries zur Verfügung.</p>
+<dl class="py function">
+<dt id="genutil.lists_dicts.sort_alphanumeric">
+<code class="sig-prename descclassname">genutil.lists_dicts.</code><code class="sig-name descname">sort_alphanumeric</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">list_of_strings</span><span class="p">:</span> <span class="n">list</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#genutil.lists_dicts.sort_alphanumeric" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Sortiert eine Liste alphanumerisch sinnvoll.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sort_alphanumeric</span><span class="p">([</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;foo_10&quot;</span><span class="p">,</span> <span class="s2">&quot;foo_8&quot;</span><span class="p">])</span>
+<span class="go">[&#39;1&#39;, &#39;2&#39;, &#39;10&#39;, &#39;foo_8&#39;, &#39;foo_10&#39;]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameter</dt>
+<dd class="field-odd"><p><strong>list_of_strings</strong> (<em>list</em>) – Eine Liste von Strings, die alphanumerisch sortiert werden soll.</p>
+</dd>
+<dt class="field-even">Rückgabe</dt>
+<dd class="field-even"><p>Alphanumerische Sortierung der Liste, die an die Funktion übergeben wurde.</p>
+</dd>
+<dt class="field-odd">Rückgabetyp</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Verursacht</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – Falls der Input Type keine Liste von Strings ist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-genutil.sharepoint_helper">
+<span id="genutil-sharepoint-helper-module"></span><h2>genutil.sharepoint_helper module<a class="headerlink" href="#module-genutil.sharepoint_helper" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Dieses Modul stellt Hilfsfunktionen zur Arbeit mit Daten aus Sharepoint zur Verfügung</p>
+<dl class="py class">
+<dt id="genutil.sharepoint_helper.SpFieldText">
+<em class="property">class </em><code class="sig-prename descclassname">genutil.sharepoint_helper.</code><code class="sig-name descname">SpFieldText</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field_text</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#genutil.sharepoint_helper.SpFieldText" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Die Klasse stellt Möglichkeiten zur Verarbeitung von Informationen in Sharepoint Feldern bereit.
+z.B. Entfernen der Identifier aus dem Text oder Extraktion einer Liste der Identifier oder Werte aus einem Feld.
+Hintergrund: Werden Sharepointfelder als String aus Sharepoint ausgelesen, enthalten diese neben dem Wert des
+Felds häufig auch zusätzlich einen Identifier. Dies kann bei der weiteren Datenverarbeitung hilfreich oder störend
+sein.</p>
+<dl class="py attribute">
+<dt id="genutil.sharepoint_helper.SpFieldText.field_text">
+<code class="sig-name descname">field_text</code><a class="headerlink" href="#genutil.sharepoint_helper.SpFieldText.field_text" title="Link zu dieser Definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="genutil.sharepoint_helper.SpFieldText.identifier_value_list">
+<code class="sig-name descname">identifier_value_list</code><a class="headerlink" href="#genutil.sharepoint_helper.SpFieldText.identifier_value_list" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Liste von Tupeln in der folgenden Form:
+[
+(„Identifier1“, „Feldwert1),
+(„Identifier2“, „Feldwert2),
+…
+]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="genutil.sharepoint_helper.SpFieldText.identifier_value_list_transponed">
+<code class="sig-name descname">identifier_value_list_transponed</code><a class="headerlink" href="#genutil.sharepoint_helper.SpFieldText.identifier_value_list_transponed" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Liste von Tupeln in der folgenden Form:
+[
+(„Identifier1“, „Identifier2, …),
+(„Feldwert1“, „Feldwert2, …)
+]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="genutil.sharepoint_helper.SpFieldText.cleanse_text">
+<code class="sig-name descname">cleanse_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delimiter</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'; '</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#genutil.sharepoint_helper.SpFieldText.cleanse_text" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Gibt einen um die Sharepoint Identifier bereinigten Text zurück.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameter</dt>
+<dd class="field-odd"><p><strong>delimiter</strong> (<em>str</em>) – Trennzeichen, das zwischen den einzelnen Werten gesetzt werden soll.</p>
+</dd>
+<dt class="field-even">Rückgabe</dt>
+<dd class="field-even"><p>Bereinigter Feldtext ohne die Sharepoint Identifier.</p>
+</dd>
+<dt class="field-odd">Rückgabetyp</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="genutil.sharepoint_helper.SpFieldText.get_identifier_list">
+<code class="sig-name descname">get_identifier_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#genutil.sharepoint_helper.SpFieldText.get_identifier_list" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Gibt eine Liste aller Sharepoint Identifier des Felds zurück</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="genutil.sharepoint_helper.SpFieldText.get_value_list">
+<code class="sig-name descname">get_value_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#genutil.sharepoint_helper.SpFieldText.get_value_list" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Gibt eine Liste aller Sharepoint Werte des Felds zurück</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-genutil">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-genutil" title="Link zu dieser Überschrift">¶</a></h2>
+<p>__init__.py</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python-Modulindex"
+             >Module</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="genutil"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">genutil 0.0.4 Dokumentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >genutil</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Martin Zöltsch.
+      Mit <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1 erstellt.
+    </div>
+  </body>
+</html>
