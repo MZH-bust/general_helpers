@@ -13,3 +13,19 @@ Link: <https://github.com/MZH-bust/genutil>
 ## Vorteile:
 * Zentrale Wartung und Weiterentwicklung an einer Stelle.
 * Zentrale Fehlerbehebung statt in jedem einzelnen Projekt. 
+
+## Testing
+Das Testing erfolgt mit pytest. Alle Testcases liegen im Ordner "tests". 
+Für manche Testcases sind zusätzliche Testdaten erforderlich. Diese liegen im Ordner "tests/data".
+
+## Dokumentationserstellung
+**Aktualisierung der HTML- und PDF Dokumentation**  
+`sphinx-apidoc -f -o source/ ../genutil/ & make html & sphinx-build -b pdf source build/pdf`
+
+**Erläuterung:**
+* SPHINX sources erzeugen mit: 
+    `sphinx-apidoc -f -o source/ ../genutil/`
+* HTML Dokumentation erzeugen mit  
+    `make html`
+* PDF Dokumentation erzeugen mit: 
+    `sphinx-build -b pdf source build/pdf`

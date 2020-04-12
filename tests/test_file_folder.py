@@ -11,9 +11,9 @@ class TestGetFileModificationDatetime:
         "test_parameter,test_cases,expected",
         [
             pytest.param(("test_file_folder.py", ), {"type": datetime}, True, id="Param1"),
-            pytest.param((Path.cwd().parent.joinpath("data/Excelfile1.xlsx"), ), {"type": datetime}, True,
+            pytest.param((Path.cwd().parent.joinpath("tests/data/Excelfile1.xlsx"), ), {"type": datetime}, True,
                          id="Param2"),
-            pytest.param(("Excelfile1.xlsx", Path.cwd().parent.joinpath("data/")),
+            pytest.param(("Excelfile1.xlsx", Path.cwd().parent.joinpath("tests/data/")),
                          {"type": datetime}, True, id="Param3"),
             pytest.param(("FILE_DOES_NOT_EXIST.md",), {"error": (FileNotFoundError, )}, True, id="Param4"),
         ],
@@ -27,11 +27,11 @@ class TestListFilesInFolder:
     @pytest.mark.parametrize(
         "test_parameter,test_cases,expected",
         [
-            pytest.param((Path.cwd().parent.joinpath("data"), ),
+            pytest.param((Path.cwd().parent.joinpath("tests/data"), ),
                          {"result": ['Excelfile1.xlsx', 'Excelfile2.XLSX', 'Excelfile3.xlsx', 'Powerpoint1.pptx', 'Powerpoint2.PPTX', 'Textfile1.txt']}, True, id="Param1"),
-            pytest.param((Path.cwd().parent.joinpath("data"), ".pptx"),
+            pytest.param((Path.cwd().parent.joinpath("tests/data"), ".pptx"),
                          {"result": ['Powerpoint1.pptx', 'Powerpoint2.PPTX']}, True, id="Param2"),
-            pytest.param((Path.cwd().parent.joinpath("data"), (".pptx", ".txt")),
+            pytest.param((Path.cwd().parent.joinpath("tests/data"), (".pptx", ".txt")),
                          {"result": ['Powerpoint1.pptx', 'Powerpoint2.PPTX', 'Textfile1.txt']}, True, id="Param3"),
             pytest.param((r"A PATH THAT DOESNT EXIST", (".pptx", ".txt")),
                          {"error": (IOError, OSError, FileNotFoundError)}, True, id="Param4"),
