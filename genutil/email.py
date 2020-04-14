@@ -15,31 +15,38 @@ import ntpath
 
 
 class Connection:
-    def __init__(self, host: str, username: str, password: str, port: int = 25, timeout: int = 300):
+    def __init__(self, host: str, username: str, password: str,
+                 port: int = 25, timeout: int = 300, debuglevel: int = 0):
         self.host = host
         self.username = username
         self.password = password
         self.port = port
         self.timeout = timeout
+        self.debuglevel = debuglevel
         self.session = None
 
     def __repr__(self):
         pass
 
     def connect(self):
+        """
+        Stellt die Verbindung her und führt den Login durch.
+        :return:
+        :rtype:
+        """
         try:
             self.session = smtplib.SMTP(host=self.host, port=self.port, timeout=self.timeout)
-        except (BlockingIOError, socketerror) as err:
+        except (BlockingIOError, socketerror, SMTPException) as err:
             self.session = None
-            return err
-        self.session.debuglevel = 2
+            print(f"Es ist ein Fehler aufgetreten: {err}")
+        self.session.debuglevel = self.debuglevel
         self.session.ehlo()
         self.session.starttls()
         self.session.ehlo()
         try:
             self.session.login(self.username, self.password)
         except SMTPAuthenticationError:
-            print("Login nicht erfolgreich")
+            print("SMTP Login nicht erfolgreich")
 
     def is_connected(self):
         """
@@ -50,9 +57,55 @@ class Connection:
         try:
             if self.session and (self.session.noop()[0] == 250):
                 return True
-        except (SMTPServerDisconnected,SMTPResponseException):
+        except (SMTPServerDisconnected,SMTPResponseException, SMTPException):
             print("Es ist ein Fehler aufgetreten")
         self.session = None
         return False
+
+    def send(self):
+        self.session.sendmail(from_addr=self.username, )
+
+
+class Message:
+    def __init__(self, subject: str, text: str = None, html: str = None,
+                 to_list: list = None, cc_list: list = None, attachments=None):
+        self.all_recipients = None
+        self.to_list = to_list
+        self.cc_list = cc_list
+        self.msg = MIMEMultipart()
+        self.set_msg_body(text, html, attachments)
+
+    def __repr__(self):
+        pass
+
+    def set_msg_body(self, text, html, attachments):
+        if not html and not attachments:
+            # Simple plain text email
+            self.msg = MIMEText(text,'plain', 'utf-8')
+        else:
+            # Multipart message
+            self.msg = MIMEMultipart()
+            if html:
+                # Add html & plain text alernative parts
+                alt = MIMEMultipart('alternative')
+                alt.attach(MIMEText(text,'plain', 'utf-8'))
+                alt.attach(MIMEText(html,'html', 'utf-8'))
+                self.msg.attach(alt)
+            else:
+                # Just add plain text part
+                txt = MIMEText(text,'plain', 'utf-8')
+                self.msg.attach(txt)
+
+    def set_msg_recipients(self):
+        self.all_recipients = []
+        if self.to_list:
+            to = list(set(self.to_list))
+            self.all_recipients += to
+            self.msg["To"] = ', '.join(to)
+        if self.cc_list:
+            cc = list(set(self.cc_list))
+            self.all_recipients += cc
+            self.msg["Cc"] = ', '.join(cc)
+
 
 

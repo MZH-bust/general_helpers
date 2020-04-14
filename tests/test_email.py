@@ -1,5 +1,6 @@
 import pytest
 from pytest_socket import disable_socket, enable_socket
+from smtplib import SMTPConnectError
 from socket import error as socketerror
 from genutil import email
 from tests.config import config
@@ -29,8 +30,8 @@ class TestEmailConnection:
 
     def test_connect_fails(self, connection):
         connection.timeout = 0
-        isinstance(connection.connect(), BlockingIOError)
+        assert connection.is_connected() is False
+
         connection.timeout = 300
         connection.host = "Nonexistinghost"
-        isinstance(connection.connect(), socketerror)
         assert connection.is_connected() is False
