@@ -11,7 +11,7 @@
   // Baseline setup
   // --------------
 
-  // Establish the root object, `window` in the browser, or `global` on the server.
+  // Establish the root object, `window` in the browser, or `global` on the host.
   var root = this;
 
   // Save the previous value of the `_` variable.
