@@ -35,3 +35,17 @@ class TestEmailConnection:
         connection.timeout = 300
         connection.host = "Nonexistinghost"
         assert connection.is_connected() is False
+
+
+class TestMessageClass:
+    @pytest.fixture
+    def textmessage_noattachment(self):
+        self.messageconfig = config.data.message
+        return email.Message(subject=self.messageconfig.subject,
+                             text=self.messageconfig.text,
+                             to_list=self.messageconfig.to_list,
+                             cc_list=self.messageconfig.cc_list)
+
+    def test_constructor(self, textmessage_noattachment):
+        assert set(textmessage_noattachment.all_recipients) == set(self.messageconfig.to_list +
+                                                                   self.messageconfig.cc_list)

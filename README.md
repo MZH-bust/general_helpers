@@ -16,7 +16,9 @@ Link: <https://github.com/MZH-bust/genutil>
 
 ## Testing
 Das Testing erfolgt mit pytest. Alle Testcases liegen im Ordner "tests". 
-Für manche Testcases sind zusätzliche Testdaten erforderlich. Diese liegen im Ordner "tests/data".
+Für manche Testcases sind zusätzliche Testdaten erforderlich. Diese liegen im Ordner "tests/data".  
+Für das Testing des E-Mail Moduls ist eine Verbindung zum SMTP Server erforderlich. 
+
 
 ## Dokumentationserstellung
 **Aktualisierung der HTML- und PDF Dokumentation**  

@@ -74,6 +74,8 @@ class Message:
         self.cc_list = cc_list
         self.msg = MIMEMultipart()
         self.set_msg_body(text, html, attachments)
+        self.set_msg_recipients()
+        print("stop")
 
     def __repr__(self):
         pass
@@ -98,14 +100,23 @@ class Message:
 
     def set_msg_recipients(self):
         self.all_recipients = []
-        if self.to_list:
-            to = list(set(self.to_list))
-            self.all_recipients += to
-            self.msg["To"] = ', '.join(to)
-        if self.cc_list:
-            cc = list(set(self.cc_list))
-            self.all_recipients += cc
-            self.msg["Cc"] = ', '.join(cc)
+        self.to_list and self.add_recipient_type("To", self.to_list)
+        self.cc_list and self.add_recipient_type("Cc", self.cc_list)
+
+    def add_recipient_type(self, recipient_type: str, recipient_list: list):
+        """
+
+        :param recipient_type: String, welcher Empfängertyp gemeint ist. Optionen: "To" oder "Cc"
+        :type recipient_type: str
+        :param recipient_list: Liste mit den Empfänger E-Mail Adressen zum jeweiligen Empfängertyp
+        :type recipient_list: list
+        :raise ValueError, falls ein nicht unterstützter Empfängertyp angegeben wird.
+        """
+        if recipient_type not in ["To", "Cc"]:
+            raise ValueError(f"Nicht unterstützter Empfängertyp: {recipient_type}")
+        unique_recipient_list = list(set(recipient_list))
+        self.all_recipients += unique_recipient_list
+        self.msg[recipient_type] = ', '.join(unique_recipient_list)
 
 
 
